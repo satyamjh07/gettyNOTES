@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>gettyNOTES</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/3.0.7/marked.min.js"></script>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <span>gettyNOTES</span>
+    </div>
+    <ul class="navbar-links">
+      <!-- <li><a href="#note-list-section">Horror Theme</a></li> -->
+      <li><a onclick="togglemode()" id="toggle-mode">Dark Mode</a></li>
+      <li><a href="#note-editor-section" onclick="addNote()">Add Note</a></li>
+    </ul>
+  </nav>
+  <div class="container">
+    <h1>gettyNOTES - Make it Simple</h1>
+    <div class="notes">
+      <h2>Notes</h2>
+      <ul id="note-list">
+        <!-- Notes will be dynamically populated here -->
+      </ul>
+      <button onclick="addNote()">Add Note</button>
+    </div>
+    <div id="note-details" class="note-details">
+      <!-- Note details will be displayed here -->
+    </div>
+    <div class="note-editor">
+      <input type="text" id="note-title" placeholder="Note Title">
+      <textarea id="note-description" rows="10" cols="30" placeholder="Note Description"></textarea>
+      <button id="save-btn" onclick="saveNote()">Save</button>
+      <button class="cancel-btn" onclick="cancelNote()">Cancel</button>
+      <button id="export-btn" onclick="exportNotes()">Export Notes</button>
+      <label for="import-btn" class="import-label">Import Notes</label>
+      <input type="file" id="import-btn" accept=".json" onchange="importNotes(event)">
+    </div>
+  </div>
+  <div class="custom-alert" id="custom-alert">
+    <p id="custom-alert-message"></p>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
